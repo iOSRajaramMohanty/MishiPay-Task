@@ -2,7 +2,7 @@
 
 # Setup
 
-This repository contains example code written in Swift. The Swift examples use Apple's Swift 5.0 programming language for iOS.
+This repository contains example code written in Swift. The Swift examples use Apple's Swift 5.0 programming language for iOS. It uses AVFoundation for scanning the code.
 
 # Assignment Details
 
