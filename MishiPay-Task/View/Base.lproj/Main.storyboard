@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bsx-Ai-pQi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scanner-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ScannerVC" customModule="MishiPay_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYf-iJ-KBe" customClass="ScannerView" customModule="MishiPay_Task" customModuleProvider="target">
+                                <rect key="frame" x="40" y="108" width="335" height="335"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MYf-iJ-KBe" secondAttribute="height" multiplier="1:1" id="lqO-NS-sXt"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64U-Iw-wLt">
+                                <rect key="frame" x="107" y="451" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.79458792099999997" green="0.27550812429999999" blue="0.20028522970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="hlr-S1-V6Z"/>
+                                    <constraint firstAttribute="height" constant="50" id="umH-M5-0vg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Scan again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="scanButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTV-tF-Rn4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="64U-Iw-wLt" firstAttribute="top" secondItem="MYf-iJ-KBe" secondAttribute="bottom" constant="8" id="4MY-gS-mnf"/>
+                            <constraint firstItem="MYf-iJ-KBe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="7Si-dm-U4l"/>
+                            <constraint firstItem="64U-Iw-wLt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9QP-Jf-lXA"/>
+                            <constraint firstItem="MYf-iJ-KBe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="OJO-n1-e5l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MYf-iJ-KBe" secondAttribute="trailing" constant="39" id="YGs-H3-ENu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scanner" id="c3v-B4-6SM"/>
+                    <connections>
+                        <outlet property="scanButton" destination="64U-Iw-wLt" id="9H5-qN-E3q"/>
+                        <outlet property="scannerView" destination="MYf-iJ-KBe" id="0pc-hy-Oaz"/>
+                        <segue destination="Gky-tn-XzS" kind="show" identifier="detailSeuge" id="FWQ-CS-GST"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+        </scene>
+        <!--Product DetailsVC-->
+        <scene sceneID="NXp-1b-8Yr">
+            <objects>
+                <viewController id="Gky-tn-XzS" customClass="ProductDetailsVC" customModule="MishiPay_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MkN-RH-0fU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ogR-aP-tg6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailsCell" rowHeight="171" id="VVh-Ld-mSF" customClass="ProductDetailsCell" customModule="MishiPay_Task" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="171"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VVh-Ld-mSF" id="ri2-cq-c2c">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="171"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jq-NZ-H1n" customClass="ProductDetailsCard" customModule="MishiPay_Task" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="171"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="9jq-NZ-H1n" secondAttribute="bottom" id="7au-Wk-w8h"/>
+                                                <constraint firstItem="9jq-NZ-H1n" firstAttribute="top" secondItem="ri2-cq-c2c" secondAttribute="top" id="F2k-8O-HNZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="9jq-NZ-H1n" secondAttribute="trailing" id="J2p-Ac-Zhm"/>
+                                                <constraint firstItem="9jq-NZ-H1n" firstAttribute="leading" secondItem="ri2-cq-c2c" secondAttribute="leading" id="jdN-4o-Ztf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productDetailsCard" destination="9jq-NZ-H1n" id="8Of-bm-nBq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gky-tn-XzS" id="yg7-gz-4yY"/>
+                                    <outlet property="delegate" destination="Gky-tn-XzS" id="HaI-Vq-nLg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ogR-aP-tg6" firstAttribute="leading" secondItem="uZ9-3M-l0o" secondAttribute="leading" id="Guo-XZ-DWs"/>
+                            <constraint firstItem="ogR-aP-tg6" firstAttribute="top" secondItem="uZ9-3M-l0o" secondAttribute="top" id="IEe-Nu-bGz"/>
+                            <constraint firstItem="ogR-aP-tg6" firstAttribute="bottom" secondItem="uZ9-3M-l0o" secondAttribute="bottom" constant="34" id="hhp-0D-ewB"/>
+                            <constraint firstItem="uZ9-3M-l0o" firstAttribute="trailing" secondItem="ogR-aP-tg6" secondAttribute="trailing" id="wnt-Ud-tUe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uZ9-3M-l0o"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NQC-gp-l3f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3Z-gX-yC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979.7101449275365" y="117.85714285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fqW-AO-SiR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bsx-Ai-pQi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gAr-Pi-zdi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7XO-GH-orU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Gd-pY-2ky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+    </scenes>
+</document>
